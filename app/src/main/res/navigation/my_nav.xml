@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/stepFragment">
+
+    <fragment
+        android:id="@+id/stepFragment"
+        android:name="com.danish.android.safeargsnav.StepFragment"
+        android:label="fragment_step"
+        tools:layout="@layout/fragment_step" >
+
+        <argument
+            android:name="flowStepNumber"
+            app:argType="integer"
+            android:defaultValue="1"/>
+
+        <action
+            android:id="@+id/action_stepFragmentTwo_to_stepFragment"
+            app:destination="@id/stepFragmentTwo" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/stepFragmentTwo"
+        android:name="com.danish.android.safeargsnav.StepFragment"
+        android:label="fragment_step_two"
+        tools:layout="@layout/fragment_step_two" >
+
+        <argument
+            android:name="flowStepNumber"
+            app:argType="integer"
+            android:defaultValue="2"/>
+        <action
+            android:id="@+id/action_stepFragmentTwo_to_stepFragment"
+            app:destination="@id/stepFragment" />
+    </fragment>
+</navigation>
